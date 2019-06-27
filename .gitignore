@@ -1,0 +1,4 @@
+/importlib_metadata-*.tar.gz
+/importlib_metadata-*/
+/results_python-importlib-metadata/
+*.rpm
