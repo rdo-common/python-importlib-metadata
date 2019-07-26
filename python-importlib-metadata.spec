@@ -3,7 +3,7 @@
 
 Name:           python-%{pkg_name}
 Version:        0.18
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Read metadata from Python packages
 
 License:        ASL 2.0
@@ -60,5 +60,8 @@ rm -r %{buildroot}/%{python3_sitelib}/%{pypi_name}/docs/
 %{python3_sitelib}/%{pypi_name}-%{version}-py?.?.egg-info/
 
 %changelog
+* Fri Jul 26 2019 Fedora Release Engineering <releng@fedoraproject.org> - 0.18-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
+
 * Wed Jun 26 2019 Miro Hrončok <mhroncok@redhat.com> - 0.18-1
 - Initial package
