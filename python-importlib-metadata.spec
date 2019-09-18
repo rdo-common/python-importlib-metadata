@@ -2,8 +2,8 @@
 %global pkg_name  importlib-metadata
 
 Name:           python-%{pkg_name}
-Version:        0.18
-Release:        2%{?dist}
+Version:        0.23
+Release:        1%{?dist}
 Summary:        Read metadata from Python packages
 
 License:        ASL 2.0
@@ -14,6 +14,7 @@ BuildArch:      noarch
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
 BuildRequires:  python3-setuptools_scm
+BuildRequires:  python3-packaging
 BuildRequires:  python3-zipp >= 0.5
 
 %description
@@ -60,6 +61,9 @@ rm -r %{buildroot}/%{python3_sitelib}/%{pypi_name}/docs/
 %{python3_sitelib}/%{pypi_name}-%{version}-py?.?.egg-info/
 
 %changelog
+* Wed Sep 18 2019 Miro Hrončok <mhroncok@redhat.com> - 0.23-1
+- Update to 0.23
+
 * Fri Jul 26 2019 Fedora Release Engineering <releng@fedoraproject.org> - 0.18-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
 
