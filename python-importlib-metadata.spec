@@ -16,6 +16,7 @@ BuildRequires:  python3-setuptools
 BuildRequires:  python3-setuptools_scm
 BuildRequires:  python3-packaging
 BuildRequires:  python3-zipp >= 0.5
+%{?el8:BuildRequires: python3-importlib-resources}
 
 %description
 importlib_metadata is a library which provides an API for accessing an
