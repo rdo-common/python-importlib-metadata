@@ -1,8 +1,9 @@
+%{?python_enable_dependency_generator}
 %global pypi_name importlib_metadata
 %global pkg_name  importlib-metadata
 
 Name:           python-%{pkg_name}
-Version:        0.23
+Version:        1.7.0
 Release:        1%{?dist}
 Summary:        Read metadata from Python packages
 
@@ -15,6 +16,8 @@ BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
 BuildRequires:  python3-setuptools_scm
 BuildRequires:  python3-packaging
+# Not available for El8
+#BuildRequires:  python3-pyfakefs
 BuildRequires:  python3-zipp >= 0.5
 %{?el8:BuildRequires: python3-importlib-resources}
 
@@ -52,8 +55,9 @@ eliminate the need to use the older and less efficient pkg_resources package.
 # Don't ship docs sources
 rm -r %{buildroot}/%{python3_sitelib}/%{pypi_name}/docs/
 
-%check
-%{__python3} setup.py test
+# Missing deps for tests: pyfakefs
+#%check
+#%{__python3} setup.py test
 
 %files -n python3-%{pkg_name}
 %license LICENSE
@@ -62,6 +66,9 @@ rm -r %{buildroot}/%{python3_sitelib}/%{pypi_name}/docs/
 %{python3_sitelib}/%{pypi_name}-%{version}-py?.?.egg-info/
 
 %changelog
+* Mon Jul 20 2020 Yatin Karel <ykarel@redhat.com> - 1.7.0-1
+- Update to 1.7.0
+
 * Wed Sep 18 2019 Miro Hrončok <mhroncok@redhat.com> - 0.23-1
 - Update to 0.23
 
